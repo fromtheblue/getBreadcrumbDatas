@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取用于生成面包屑导航的数据</title>
+</head>
+<body>
+    <dl>
+        <dt>生成的结构为:</dt>
+        <dd id="show"></dd>
+    </dl>
+    <script>
+        var datas=[{
+            id:"0",
+            children:[{
+                id:"00",
+                children:[{
+                    id:"000"
+                },{
+                    id:"001"
+                },{
+                    id:"002"
+                },{
+                    id:"003",
+                    children:[{
+                        id:"0030"
+                    },{
+                        id:"0031"
+                    },{
+                        id:"0032"
+                    }]
+                }]
+            },{
+                id:"01",
+                children:[{
+                    id:"010"
+                },{
+                    id:"011"
+                },{
+                    id:"012"
+                },{
+                    id:"013",
+                    children:[{
+                        id:"0130"
+                    },{
+                        id:"0131"
+                    },{
+                        id:"0132"
+                    }]
+                }]
+            }]
+        },{
+            id:"1",
+            children:[{
+                id:"10",
+                children:[{
+                    id:"100"
+                },{
+                    id:"101"
+                },{
+                    id:"102"
+                },{
+                    id:"103",
+                    children:[{
+                        id:"1030"
+                    },{
+                        id:"1031"
+                    },{
+                        id:"1032"
+                    }]
+                }]
+            },{
+                id:"11",
+                children:[{
+                    id:"110"
+                },{
+                    id:"111"
+                },{
+                    id:"112"
+                },{
+                    id:"113",
+                    children:[{
+                        id:"1130"
+                    },{
+                        id:"1131"
+                    },{
+                        id:"1132"
+                    }]
+                }]
+            }]
+        }];
+        var data={id:"1132"};
+    </script>
+    <script src="getBreadcrumbDatas.js"></script>
+    <script>
+        var breadcrumbDatas=getBreadcrumbDatas(data,datas);
+        document.querySelector("#show").innerText=breadcrumbDatas.map(function(data){
+            return data.id;
+        }).join(",");
+        console.log(getBreadcrumbDatas(data,datas));
+    </script>
+</body>
+</html>
