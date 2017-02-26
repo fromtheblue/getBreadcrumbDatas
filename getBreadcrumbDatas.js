@@ -15,7 +15,7 @@ function getBreadcrumbDatas(leafData,datas,preRender){
     return currentDatas.reverse();
     function extractData(datas){
         return datas.some(function(currentData){
-            if(currentData.id===data.id||currentData===data){
+            if(currentData.id===leafData.id||currentData===leafData){
                 return true;
             }
             if(currentData.children){
